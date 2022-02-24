@@ -9,62 +9,46 @@
 <body>
     
 <div id="app">
-    <div>
-        <input v-model="pick" type="radio" id="xiaomi" name="cel" value="xiaomi">
-        <label>xiaomi</label>
-      </div>
-      <div>
-        <input v-model="pick" type="radio" id="Samsumg" name="cel" value="samsumg">
-        <label>Samsumg</label>
-      </div>
-      <div>
-        <input v-model="pick" type="radio" id="apple" name="cel" value="apple">
-        <label>Apple</label>
-      </div>
-    <p>
-      {{pick}}
-   </p>
+  <div>
+    <div  v-for="marca in marcas">
+      <input v-model="pick" type="radio" id="marca" name="cel" :value="marca.nombre">
+      <label>{{marca.nombre}}</label>
+    </div>
 <br>
-
-<div v-if="pick=='xiaomi'">
-<div>
-    <input  v-model="pick2" type="radio" id="xiaomi" name="c" value="Redmi note">
-    <label>Redmi note</label>
-  </div>
-  <div>
-    <input v-model="pick2" type="radio" id="Samsumg" name="c" value="Poco x3">
-    <label>Poco x3</label>
-  </div>
-  <div>
-    <input v-model="pick2" type="radio" id="apple" name="c" value="Mi 11">
-    <label>Mi 11</label>
+    <button v-on:click="cambiarCel">cambio</button>
+    <p >
+      {{pick}}
+      <br>
+      <img v-bind:src="modelos" />
+   </p>
   </div>
 
+<div v-show="pick=='xiaomi'">
+  <div  v-for="x in xiaomi">
+    <input v-model="pick2" type="radio" id="x" name="xiaomi" :value="x">
+    <label>{{x}}</label>
+  </div>
 </div>
 
-<div v-if="pick=='apple'">
-    <div>
-        <input  v-model="pick2" type="radio" name="d" value="Iphone 10">
-        <label >Iphone 10</label>
-      </div>
-      <div>
-        <input v-model="pick2" type="radio" name="d" value="Iphone 11">
-        <label >Iphone 11</label>
-      </div>
-      <div>
-        <input v-model="pick2" type="radio" name="d" value="Iphone 12">
-        <label >Iphone 12</label>
-      </div>
-    
-    </div>
-
-    <div v-if="pick=='samsumg'">
-        <input type="text">
-        
-    </div>
-    {{pick2}}
+<div v-show="pick=='samsumg'">
+  <div  v-for="s in samsumg">
+    <input v-model="pick2" type="radio" id="s" name="samsumg" :value="s">
+    <label>{{s}}</label>
+  </div>
 </div>
 
+<div v-show="pick=='apple'">
+  <div  v-for="p in apple">
+    <input v-model="pick2" type="radio" id="x" name="apple" :value="p">
+    <label>{{p}}</label>
+  </div>
+</div>
+
+<p>
+  {{pick2}}
+</p>
+
+</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
