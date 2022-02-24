@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="app">
+    <div>
+        <input v-model="pick" type="radio" id="xiaomi" name="cel" value="xiaomi">
+        <label>xiaomi</label>
+      </div>
+      <div>
+        <input v-model="pick" type="radio" id="Samsumg" name="cel" value="samsumg">
+        <label>Samsumg</label>
+      </div>
+      <div>
+        <input v-model="pick" type="radio" id="apple" name="cel" value="apple">
+        <label>Apple</label>
+      </div>
+    <p>
+      {{pick}}
+   </p>
+<br>
+
+<div v-if="pick=='xiaomi'">
+<div>
+    <input  v-model="pick2" type="radio" id="xiaomi" name="c" value="Redmi note">
+    <label>Redmi note</label>
+  </div>
+  <div>
+    <input v-model="pick2" type="radio" id="Samsumg" name="c" value="Poco x3">
+    <label>Poco x3</label>
+  </div>
+  <div>
+    <input v-model="pick2" type="radio" id="apple" name="c" value="Mi 11">
+    <label>Mi 11</label>
+  </div>
+
+</div>
+
+<div v-if="pick=='apple'">
+    <div>
+        <input  v-model="pick2" type="radio" name="d" value="Iphone 10">
+        <label >Iphone 10</label>
+      </div>
+      <div>
+        <input v-model="pick2" type="radio" name="d" value="Iphone 11">
+        <label >Iphone 11</label>
+      </div>
+      <div>
+        <input v-model="pick2" type="radio" name="d" value="Iphone 12">
+        <label >Iphone 12</label>
+      </div>
+    
+    </div>
+
+    <div v-if="pick=='samsumg'">
+        <input type="text">
+        
+    </div>
+    {{pick2}}
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="ejem2.js"></script>
+</body>
+</html>
